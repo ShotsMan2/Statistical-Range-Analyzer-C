@@ -1,40 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
-{
-     int sayi,i,max,min,fark;
+int main() {
+    int sayi, i, max, min, fark;
 
-    printf("1. sayiyi girin");
-        scanf("%d",&max);
+    // İlk sayıyı al ve referans noktası olarak belirle
+    printf("1. sayiyi girin: ");
+    scanf("%d", &sayi);
+    max = sayi;
+    min = sayi;
 
-        printf("2. sayiyi girin");
-        scanf("%d",&min);
+    // Kalan 9 sayıyı döngü ile al
+    for(i = 2; i <= 10; i++) {
+        printf("%d. sayiyi girin: ", i);
+        scanf("%d", &sayi);
 
-    for(i=3;i<=10;i++){
-        printf("%d. sayiyi girin",i);
-        scanf("%d",&sayi);
-
-        if(max<min){
-            min=max;
+        if(sayi > max) {
+            max = sayi;
         }
-
-        else if(max<sayi){
-            max=sayi;
+        if(sayi < min) {
+            min = sayi;
         }
-        else if(min>sayi){
-                min=sayi;
-        }
-
-
-
-
     }
-    printf("max:%d\n",max);
-    printf("min:%d\n",min);
 
+    fark = max - min;
+    
+    printf("\n--------------------");
+    printf("\nEn Buyuk: %d", max);
+    printf("\nEn Kucuk: %d", min);
+    printf("\nFark (Range): %d\n", fark);
 
-    fark=max-min;
-    printf("fark:%d\n",fark);
-
+    return 0;
 }
