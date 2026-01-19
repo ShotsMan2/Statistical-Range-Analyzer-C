@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main()
+{
     int sayi, i, max, min, fark;
 
     // İlk sayıyı al ve referans noktası olarak belirle
@@ -11,20 +12,23 @@ int main() {
     min = sayi;
 
     // Kalan 9 sayıyı döngü ile al
-    for(i = 2; i <= 10; i++) {
+    for (i = 2; i <= 10; i++)
+    {
         printf("%d. sayiyi girin: ", i);
         scanf("%d", &sayi);
 
-        if(sayi > max) {
+        if (sayi > max)
+        {
             max = sayi;
         }
-        if(sayi < min) {
+        if (sayi < min)
+        {
             min = sayi;
         }
     }
 
     fark = max - min;
-    
+
     printf("\n--------------------");
     printf("\nEn Buyuk: %d", max);
     printf("\nEn Kucuk: %d", min);
